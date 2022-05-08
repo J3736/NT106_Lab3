@@ -60,6 +60,7 @@
             this.Controls.Add(this.btnSend);
             this.Name = "frmVd1_Client";
             this.Text = "Vd1_Client";
+            this.Load += new System.EventHandler(this.frmVd1_Client_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

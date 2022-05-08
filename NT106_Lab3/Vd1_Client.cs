@@ -26,10 +26,15 @@ namespace NT106_Lab3
             IPEndPoint EPHost = new IPEndPoint(IpAdd, 8080);
             
             //data
-            Byte[] data = Encoding.ASCII.GetBytes("Hello world!");
+            Byte[] datasend = Encoding.ASCII.GetBytes("Hello world!");
             
             //send
-            udpClient.Send(data, data.Length, EPHost);
+            udpClient.Send(datasend, datasend.Length, EPHost);
+        }
+
+        private void frmVd1_Client_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

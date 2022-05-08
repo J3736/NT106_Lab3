@@ -30,13 +30,13 @@ namespace NT106_Lab3
 
             while (true)
             {
-               
-                byte[] data = udpClient.Receive(ref RemoteIPEP);
+               // IPEndPoint RemoteIPEP = new IPEndPoint(IPAddress.Any, 0);
+                Byte[] bytesend = udpClient.Receive(ref RemoteIPEP);
 
                 //byte to string
-                string mess = Encoding.ASCII.GetString(data);
-                string printmess = RemoteIPEP.ToString() + ": " + data;
-                lstMes.Items.Add(printmess);
+                string returndata = Encoding.ASCII.GetString(bytesend);
+                string mess = RemoteIPEP.Address.ToString() + ": " + returndata.ToString();
+                lstMes.Items.Add(mess);
             }
           
         }
@@ -44,8 +44,13 @@ namespace NT106_Lab3
         {
             CheckForIllegalCrossThreadCalls = false;
             Thread threadUDPServer = new Thread(new ThreadStart(serverThread));
-            threadUDPServer.Start();
             threadUDPServer.IsBackground = true;
+            threadUDPServer.Start();
+        }
+
+        private void lstMes_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

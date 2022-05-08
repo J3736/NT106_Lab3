@@ -33,7 +33,6 @@
             // 
             // lstMes
             // 
-            this.lstMes.FullRowSelect = true;
             this.lstMes.HideSelection = false;
             this.lstMes.Location = new System.Drawing.Point(40, 49);
             this.lstMes.Name = "lstMes";
@@ -41,6 +40,7 @@
             this.lstMes.TabIndex = 0;
             this.lstMes.UseCompatibleStateImageBehavior = false;
             this.lstMes.View = System.Windows.Forms.View.List;
+            this.lstMes.SelectedIndexChanged += new System.EventHandler(this.lstMes_SelectedIndexChanged);
             // 
             // frmVd1_Server
             // 
