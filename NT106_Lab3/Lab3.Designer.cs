@@ -31,11 +31,13 @@
             this.btnB1 = new System.Windows.Forms.Button();
             this.btnVD = new System.Windows.Forms.Button();
             this.btnQ = new System.Windows.Forms.Button();
+            this.btnB2 = new System.Windows.Forms.Button();
+            this.btnB3 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnB1
             // 
-            this.btnB1.Location = new System.Drawing.Point(46, 20);
+            this.btnB1.Location = new System.Drawing.Point(46, 178);
             this.btnB1.Name = "btnB1";
             this.btnB1.Size = new System.Drawing.Size(159, 89);
             this.btnB1.TabIndex = 0;
@@ -45,7 +47,7 @@
             // 
             // btnVD
             // 
-            this.btnVD.Location = new System.Drawing.Point(328, 20);
+            this.btnVD.Location = new System.Drawing.Point(46, 32);
             this.btnVD.Name = "btnVD";
             this.btnVD.Size = new System.Drawing.Size(159, 89);
             this.btnVD.TabIndex = 1;
@@ -63,11 +65,33 @@
             this.btnQ.UseVisualStyleBackColor = true;
             this.btnQ.Click += new System.EventHandler(this.btnQ_Click);
             // 
+            // btnB2
+            // 
+            this.btnB2.Location = new System.Drawing.Point(238, 178);
+            this.btnB2.Name = "btnB2";
+            this.btnB2.Size = new System.Drawing.Size(159, 89);
+            this.btnB2.TabIndex = 3;
+            this.btnB2.Text = "BÀI 2";
+            this.btnB2.UseVisualStyleBackColor = true;
+            // 
+            // btnB3
+            // 
+            this.btnB3.Location = new System.Drawing.Point(434, 178);
+            this.btnB3.Name = "btnB3";
+            this.btnB3.Size = new System.Drawing.Size(159, 89);
+            this.btnB3.TabIndex = 4;
+            this.btnB3.Text = "BÀI 3";
+            this.btnB3.UseVisualStyleBackColor = true;
+            this.btnB3.Click += new System.EventHandler(this.btnB3_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.HotTrack;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btnB3);
+            this.Controls.Add(this.btnB2);
             this.Controls.Add(this.btnQ);
             this.Controls.Add(this.btnVD);
             this.Controls.Add(this.btnB1);
@@ -83,6 +107,8 @@
         private System.Windows.Forms.Button btnB1;
         private System.Windows.Forms.Button btnVD;
         private System.Windows.Forms.Button btnQ;
+        private System.Windows.Forms.Button btnB2;
+        private System.Windows.Forms.Button btnB3;
     }
 }
 

@@ -7,14 +7,22 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Net;
+using System.Net.Sockets;
 
 namespace NT106_Lab3
 {
-    public partial class frmB1 : Form
+    public partial class frmB2 : Form
     {
-        public frmB1()
+        public frmB2()
         {
             InitializeComponent();
+        }
+
+        private void btnListen_Click(object sender, EventArgs e)
+        {
+            btnListen.Enabled = false;
+            
         }
     }
 }

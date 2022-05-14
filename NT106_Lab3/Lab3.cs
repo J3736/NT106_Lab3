@@ -24,6 +24,13 @@ namespace NT106_Lab3
 
         private void btnB1_Click(object sender, EventArgs e)
         {
+            frmB1 frm = new frmB1();
+            if (Application.OpenForms.OfType<frmB1>().Any())
+            {
+                MessageBox.Show("Already Opened.");
+            }
+            else
+                frm.Show();
 
         }
 
@@ -44,6 +51,17 @@ namespace NT106_Lab3
         private void btnQ_Click(object sender, EventArgs e)
         {
             Application.Exit();
+        }
+
+        private void btnB3_Click(object sender, EventArgs e)
+        {
+            frmB3 frm = new frmB3();
+            if (Application.OpenForms.OfType<frmB3>().Any())
+            {
+                MessageBox.Show("Already Opened.");
+            }
+            else
+                frm.Show();
         }
     }
 }
