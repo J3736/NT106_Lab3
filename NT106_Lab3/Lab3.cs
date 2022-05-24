@@ -63,5 +63,16 @@ namespace NT106_Lab3
             else
                 frm.Show();
         }
+
+        private void btnB2_Click(object sender, EventArgs e)
+        {
+            frmB2 frm = new frmB2();
+            if (Application.OpenForms.OfType<frmB2>().Any())
+            {
+                MessageBox.Show("Already Opened.");
+            }
+            else
+                frm.Show();
+        }
     }
 }

@@ -73,6 +73,7 @@
             this.btnB2.TabIndex = 3;
             this.btnB2.Text = "BÀI 2";
             this.btnB2.UseVisualStyleBackColor = true;
+            this.btnB2.Click += new System.EventHandler(this.btnB2_Click);
             // 
             // btnB3
             // 

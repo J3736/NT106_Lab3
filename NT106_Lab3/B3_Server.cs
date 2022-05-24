@@ -28,7 +28,7 @@ namespace NT106_Lab3
                 IPEP.Port.ToString() + "\n");
 
             int bytesreceive = 0;
-            Byte[] BytesRecevei = new Byte[1];
+            byte[] BytesRecevei = new byte[1];
 
             Socket ClientSocket;
             Socket Listener = new Socket
@@ -36,8 +36,9 @@ namespace NT106_Lab3
                 SocketType.Stream, 
                 ProtocolType.Tcp
                 );
+
             Listener.Bind(IPEP);
-            Listener.Listen(-1);
+            Listener.Listen(1);
             ClientSocket = Listener.Accept();
 
             rtbMess.AppendText("New client connected.\n");
@@ -50,7 +51,7 @@ namespace NT106_Lab3
                     bytesreceive = ClientSocket.Receive(BytesRecevei);
                     text += Encoding.ASCII.GetString(BytesRecevei);
                 } while (text[text.Length - 1] != '\n');
-                Listener.Close();
+               // Listener.Close();
             }
         }    
         
