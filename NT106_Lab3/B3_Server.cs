@@ -42,7 +42,7 @@ namespace NT106_Lab3
 
             rtbMess.AppendText("New client connected.\n");
 
-            while (ClientSocket.Connected == true)
+            while (true)
             {
                 string text = "";
                 do
@@ -51,10 +51,12 @@ namespace NT106_Lab3
                     text += Encoding.ASCII.GetString(BytesRecevei);
                 }
                 while (text[text.Length - 1] != '\n');
+
                 rtbMess.AppendText(text);
-               // Listener.Close();
             }
         }
+        
+        
 
         private void btnListen_Click(object sender, EventArgs e)
         {

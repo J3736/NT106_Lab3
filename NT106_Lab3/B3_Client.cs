@@ -25,8 +25,7 @@ namespace NT106_Lab3
             NetworkStream ns = tcpClient.GetStream();
             Byte[] data = Encoding.ASCII.GetBytes("Hello world \n");
             ns.Write(data,0,data.Length);
-            //ns.Close();
-            //tcpClient.Close();
+            
         }
 
         private void btnConnect_Click(object sender, EventArgs e)
@@ -35,6 +34,14 @@ namespace NT106_Lab3
             IPEndPoint IPEP = new IPEndPoint(
             IPAddress.Parse("127.0.0.1"), 8080);
             tcpClient.Connect(IPEP);
+        }
+
+        private void frmB3_Client_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            NetworkStream ns = tcpClient.GetStream();
+            Byte[] data = Encoding.ASCII.GetBytes("Quit \n");
+            ns.Write(data, 0, data.Length);
+            tcpClient.Close();
         }
     }
 }

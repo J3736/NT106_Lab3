@@ -61,6 +61,7 @@
             this.Controls.Add(this.btnSend);
             this.Name = "frmB3_Client";
             this.Text = "TCP Client";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.frmB3_Client_FormClosed);
             this.ResumeLayout(false);
 
         }
