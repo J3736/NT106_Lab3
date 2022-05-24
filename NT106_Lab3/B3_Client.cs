@@ -18,21 +18,23 @@ namespace NT106_Lab3
         {
             InitializeComponent();
         }
-
+        private TcpClient tcpClient = new TcpClient();
+        
         private void btnSend_Click(object sender, EventArgs e)
         {
-            TcpClient tcpClient = new TcpClient();
-            IPEndPoint IPEP = new IPEndPoint(
-                IPAddress.Parse("127.0.0.1"), 8080);
-            tcpClient.Connect(IPEP);
-
             NetworkStream ns = tcpClient.GetStream();
             Byte[] data = Encoding.ASCII.GetBytes("Hello world \n");
             ns.Write(data,0,data.Length);
-            Byte[] stop = Encoding.ASCII.GetBytes("Quit \n");
-            ns.Write(data, 0, data.Length);
-            ns.Close();
-            tcpClient.Close();
+            //ns.Close();
+            //tcpClient.Close();
+        }
+
+        private void btnConnect_Click(object sender, EventArgs e)
+        {
+
+            IPEndPoint IPEP = new IPEndPoint(
+            IPAddress.Parse("127.0.0.1"), 8080);
+            tcpClient.Connect(IPEP);
         }
     }
 }

@@ -34,6 +34,7 @@
             // 
             // btnListen
             // 
+            this.btnListen.ForeColor = System.Drawing.SystemColors.ActiveCaption;
             this.btnListen.Location = new System.Drawing.Point(570, 39);
             this.btnListen.Name = "btnListen";
             this.btnListen.Size = new System.Drawing.Size(162, 47);
@@ -54,6 +55,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(800, 468);
             this.Controls.Add(this.rtbMess);
             this.Controls.Add(this.btnListen);

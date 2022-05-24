@@ -24,37 +24,38 @@ namespace NT106_Lab3
         {
             IPEndPoint IPEP = new IPEndPoint(IPAddress.Parse("127.0.0.1"), 8080);
             rtbMess.AppendText("Server is running on" +
-                IPEP.Address.ToString() + ":" +
-                IPEP.Port.ToString() + "\n");
+            IPEP.Address.ToString() + ":" +
+            IPEP.Port.ToString() + "\n");
 
-            int bytesreceive = 0;
             byte[] BytesRecevei = new byte[1];
 
             Socket ClientSocket;
             Socket Listener = new Socket
                 (AddressFamily.InterNetwork,
-                SocketType.Stream, 
+                SocketType.Stream,
                 ProtocolType.Tcp
                 );
 
             Listener.Bind(IPEP);
-            Listener.Listen(1);
+            Listener.Listen(-1);
             ClientSocket = Listener.Accept();
 
             rtbMess.AppendText("New client connected.\n");
 
-            while(ClientSocket.Connected)
+            while (ClientSocket.Connected == true)
             {
-                string text="";
+                string text = "";
                 do
                 {
-                    bytesreceive = ClientSocket.Receive(BytesRecevei);
+                    ClientSocket.Receive(BytesRecevei);
                     text += Encoding.ASCII.GetString(BytesRecevei);
-                } while (text[text.Length - 1] != '\n');
+                }
+                while (text[text.Length - 1] != '\n');
+                rtbMess.AppendText(text);
                // Listener.Close();
             }
-        }    
-        
+        }
+
         private void btnListen_Click(object sender, EventArgs e)
         {
             CheckForIllegalCrossThreadCalls = false;
@@ -64,3 +65,4 @@ namespace NT106_Lab3
         }
     }
 }
+

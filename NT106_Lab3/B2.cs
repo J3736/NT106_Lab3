@@ -45,6 +45,7 @@ namespace NT106_Lab3
                 text += Encoding.ASCII.GetString(receive);
                 rtbMess.AppendText(text);
             }
+            ListenerSocket.Close();
         }
         private void btnListen_Click(object sender, EventArgs e)
         {
